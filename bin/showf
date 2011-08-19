@@ -1,0 +1,16 @@
+#! /bin/bash
+# This script enables/disables showing hidden files
+
+case "$1" in
+y|Y|yes|YES) defaults write com.apple.Finder AppleShowAllFiles YES; killall Finder;;
+n|N|no|NO) defaults write com.apple.Finder AppleShowAllFiles NO; killall Finder;;
+*) echo "What?";;
+esac
+
+#usrInput=$1
+#if (( ${#usrInput} == "YES" )) || (( ${#usrInput} == "NO" )); then
+#   defaults write com.apple.Finder AppleShowAllFiles $usrInput 
+#   killall Finder
+#else
+#   echo "What?"
+#fi
